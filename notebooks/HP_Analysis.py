@@ -17,7 +17,7 @@ def load_data(path):
     return df
 
 
-hp_df_raw = load_data(path="Harry-Potter-Data-Analysis/notebooks/Characters.csv")
+hp_df_raw = load_data(path="notebooks/Characters.csv")
 hp_df = deepcopy(hp_df_raw)
 
 hp_colors = color_list = ['#740001', '#ae0001', '#eeba30', '#d3a625', '#5d5d5d', '#aaaaaa', '#0e1a40', '#bebebe', '#946b2d', '#ecb939', '#f0c75e', '#726255', '#372e29']
