@@ -186,7 +186,7 @@ st.plotly_chart(fig)
 spirit_fig = go.Figure(data = go.Bar())
 
 spirit_df = hp_df.groupby(by = ["Spirit", "Dead"]).Name.count().reset_index()
-st.dataframe(spirit_df)
+#st.dataframe(spirit_df)
 
 spirit_fig.add_trace(go.Bar (x = spirit_df[spirit_df.Dead == "Dead"].Spirit, y = spirit_df[spirit_df.Dead == "Dead"]["Name"],  name = "Dead"))
 spirit_fig.add_trace(go.Bar (x = spirit_df[spirit_df.Dead == "Alive"].Spirit, y = spirit_df[spirit_df.Dead == "Alive"]["Name"],  name = "Alive"))
