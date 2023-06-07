@@ -11,7 +11,7 @@ from plotly.subplots import make_subplots
 
 #region import df
 # First some Data Exploration
-@st.cache_data
+# @st.cache_data
 def load_data(path):
     df = pd.read_csv(path, sep=";")
     return df
