@@ -9,26 +9,29 @@ import json
 from copy import deepcopy
 from plotly.subplots import make_subplots
 
-#region import df
-# First some Data Exploration
-# @st.cache_data
-def load_data(path):
-    df = pd.read_csv(path, sep=";")
-    return df
-
-
-hp_df_raw = load_data(path="notebooks/Characters.csv")
-hp_df = deepcopy(hp_df_raw)
-
+# region given standard parameters
 hp_colors = color_list = ['#740001', '#ae0001', '#eeba30', '#d3a625', '#5d5d5d', '#aaaaaa', '#0e1a40', '#bebebe', '#946b2d', '#ecb939', '#f0c75e', '#726255', '#372e29']
+
+
+#endregion
+
+#region functions
+# Load dataset
+def load_data(path):
+    df_raw = pd.read_csv(path, sep=";")
+    df = deepcopy(df_raw)
+
+    return df
+#endregion
+
+hp_df = load_data(path="../notebooks/Characters.csv")
+
 
 # Add title and header
 st.title("Introduction to Streamlit")
 st.header("My Harry Potter Steamlit App")
 
 #region Data cleaning
-
-
 hp_df["Loyalty"] = hp_df["Loyalty"].fillna("Unknown")
 hp_df["House"] = hp_df["House"].fillna("Unknown")
 hp_df["Blood status"] = hp_df["Blood status"].fillna("Unknown")
